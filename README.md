@@ -15,5 +15,8 @@ docker --version
 ## Buildar Img e Executar Container
 ```bash
 sudo docker build -t api .
-sudo docker run -e FLASK_APP=api.py api:latest
+sudo docker run -p 8080:8080 -e FLASK_APP=api.py api:latest
+# em outro terminal, faca uma requisicao http
+curl -X GET 0.0.0.0:8080/get_hello_world
 ```
+
